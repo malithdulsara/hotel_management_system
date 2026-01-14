@@ -193,7 +193,7 @@ public class RoomInfoFormController implements Initializable{
         }
     }
     private void clearFields() {
-        txtRoomId.setText("");
+        txtRoomId.setText("hi");
         txtPrice.setText("");
         txtDescription.setText("");
         cmbType.setValue(null);
