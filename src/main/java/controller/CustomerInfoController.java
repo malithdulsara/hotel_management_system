@@ -199,7 +199,7 @@ public class CustomerInfoController implements Initializable {
             int rowsAffected = statement.executeUpdate();
 
             if (rowsAffected > 0) {
-                System.out.println("Customer deleted successfully!");
+                System.out.println("Customer deleted successfully !");
 
 
                 customerInfoDtos.remove(selectCustomer);
