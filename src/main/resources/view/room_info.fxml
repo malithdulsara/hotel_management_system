@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="686.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RoomInfoFormController">
+<AnchorPane prefHeight="686.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.rooms.RoomInfoFormController">
     <children>
         <Label alignment="CENTER" layoutX="224.0" layoutY="36.0" prefHeight="50.0" prefWidth="454.0" text="Room Information" textFill="#2c8fe6" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="223.0" AnchorPane.topAnchor="36.0">
             <font>
