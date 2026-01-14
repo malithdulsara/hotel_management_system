@@ -1,4 +1,4 @@
-package controller;
+package controller.rooms;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 
 
 public class RoomInfoFormController implements Initializable{
-    RoomInfoController roomInfoController = new RoomInfoController();
+    RoomInfoService roomInfoService = new RoomInfoController();
     ObservableList<RoomInfoDto> roomInfoDtos = FXCollections.observableArrayList();
 
     @FXML
@@ -67,7 +67,7 @@ public class RoomInfoFormController implements Initializable{
 
     private void loadTable(){
 
-        tblRoomInfo.setItems(roomInfoController.getAllRooms());
+        tblRoomInfo.setItems(roomInfoService.getAllRooms());
 
         colRoomId.setCellValueFactory(new PropertyValueFactory<>("roomId"));
         colType.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -139,7 +139,7 @@ public class RoomInfoFormController implements Initializable{
         String description = txtDescription.getText();
         int floor = cmbFloor.getValue();
 
-        roomInfoController.addRoomDetails(roomId,type,pricePerNight,maxGuest,availability,description,floor);
+        roomInfoService.addRoomDetails(roomId,type,pricePerNight,maxGuest,availability,description,floor);
         loadTable();
         clearFields();
 
@@ -152,7 +152,7 @@ public class RoomInfoFormController implements Initializable{
             new Alert(Alert.AlertType.ERROR, "Please enter an ID to delete!").show();
         }
 
-        int rowsAffected = roomInfoController.deleteRoom(roomId);
+        int rowsAffected = roomInfoService.deleteRoom(roomId);
 
         if (rowsAffected > 0) {
             new Alert(Alert.AlertType.INFORMATION, "room Deleted Successfully!").show();
@@ -175,7 +175,7 @@ public class RoomInfoFormController implements Initializable{
         String description = txtDescription.getText();
         int floor = cmbFloor.getValue();
 
-        int rows = roomInfoController.updateRoomDetails(roomId,type,pricePerNight,maxGuest,availability,description,floor);
+        int rows = roomInfoService.updateRoomDetails(roomId,type,pricePerNight,maxGuest,availability,description,floor);
 
         if (rows > 0) {
             new Alert(Alert.AlertType.INFORMATION, "Room Updated!").show();

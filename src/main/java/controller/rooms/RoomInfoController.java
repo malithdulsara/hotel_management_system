@@ -1,4 +1,4 @@
-package controller;
+package controller.rooms;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -6,7 +6,7 @@ import model.dto.RoomInfoDto;
 
 import java.sql.*;
 
-public class RoomInfoController {
+public class RoomInfoController implements RoomInfoService {
 
     public ObservableList<RoomInfoDto> getAllRooms(){
         ObservableList<RoomInfoDto> roomInfoDtos = FXCollections.observableArrayList();
